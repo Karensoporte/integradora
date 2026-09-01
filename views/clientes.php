@@ -41,7 +41,7 @@
                 <h3 class="card-title text-center mb-4">
                     Registrar nuevo cliente
                 </h3>
-                <form action="" method="POST">
+                <form action="" method="POST" id="formularioCliente">
                     <div class="row">
                         <!-- Nombre -->
                         <div class="col-md-6 mb-3">
@@ -174,6 +174,6 @@
             Actividad Integradora 3 - Programación de Sistemas Web
         </p>
     </footer>
-
+     <script src="public/js/validaciones.js"></script>
 </body>
 </html>
