@@ -119,6 +119,12 @@
         </div>
     </div>
 </div>
+
+<?php if (!empty($mensaje)): ?>
+    <div class="alert alert-info text-center mb-4">
+        <?php echo $mensaje; ?>
+    </div>
+<?php endif; ?>
         <!-- Tarjetas principales -->
         <div class="row justify-content-center">
 
@@ -144,21 +150,60 @@
             </div>
 
             <!-- Consultar clientes -->
-            <div class="col-md-5 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body text-center">
+            <!-- Consultar clientes -->
+            <div class="col-md-10 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
 
-                        <h3 class="card-title">
-                            Consultar Clientes
+                        <h3 class="card-title text-center mb-4">
+                            Clientes registrados
                         </h3>
 
-                        <p class="card-text">
-                            Permite consultar los clientes registrados en el sistema.
-                        </p>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido</th>
+                                        <th>Correo</th>
+                                        <th>Teléfono</th>
+                                        <th>Edad</th>
+                                        <th>Fecha de registro</th>
+                                    </tr>
+                                </thead>
 
-                        <button class="btn btn-outline-primary">
-                            Ver Clientes
-                        </button>
+                                <tbody>
+
+                                   <?php if (isset($clientes) && $clientes && $clientes->num_rows > 0): ?>
+
+                                        <?php while ($cliente = $clientes->fetch_assoc()): ?>
+
+                                            <tr>
+                                                <td><?php echo $cliente['id']; ?></td>
+                                                <td><?php echo $cliente['nombre']; ?></td>
+                                                <td><?php echo $cliente['apellido']; ?></td>
+                                                <td><?php echo $cliente['correo']; ?></td>
+                                                <td><?php echo $cliente['telefono']; ?></td>
+                                                <td><?php echo $cliente['edad']; ?></td>
+                                                <td><?php echo $cliente['fecha_registro']; ?></td>
+                                            </tr>
+
+                                        <?php endwhile; ?>
+
+                                    <?php else: ?>
+
+                                        <tr>
+                                            <td colspan="7" class="text-center">
+                                                No existen clientes registrados.
+                                            </td>
+                                        </tr>
+
+                                    <?php endif; ?>
+
+                                </tbody>
+                            </table>
+                        </div>
 
                     </div>
                 </div>
