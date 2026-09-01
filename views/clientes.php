@@ -34,7 +34,91 @@
                 Sistema web desarrollado con PHP, MySQL y MVC
             </p>
         </div>
-
+<div class="row justify-content-center mb-5">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                    Registrar nuevo cliente
+                </h3>
+                <form action="" method="POST">
+                    <div class="row">
+                        <!-- Nombre -->
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label">
+                                Nombre
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nombre"
+                                name="nombre"
+                                placeholder="Ingrese el nombre"
+                            >
+                        </div>
+                        <!-- Apellido -->
+                        <div class="col-md-6 mb-3">
+                            <label for="apellido" class="form-label">
+                                Apellido
+                            </label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="apellido"
+                                name="apellido"
+                                placeholder="Ingrese el apellido"
+                            >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Correo -->
+                        <div class="col-md-6 mb-3">
+                            <label for="correo" class="form-label">
+                                Correo electrónico
+                            </label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="correo"
+                                name="correo"
+                                placeholder="ejemplo@correo.com"
+                            >
+                        </div>
+                        <!-- Teléfono -->
+                        <div class="col-md-6 mb-3">
+                            <label for="telefono" class="form-label">
+                                Teléfono
+                            </label>
+                            <input  type="text" class="form-control"   id="telefono"   name="telefono" placeholder="0999999999"  >
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Edad -->
+                        <div class="col-md-6 mb-3">
+                            <label for="edad" class="form-label">
+                                Edad
+                            </label>
+                            <input  type="number"  class="form-control"  id="edad" name="edad"   placeholder="Ingrese la edad"  >
+                        </div>
+                    </div>
+                    <!-- Botones -->
+                    <div class="text-center mt-3">
+                        <button
+                            type="submit"
+                            class="btn btn-primary px-4" >
+                            Registrar cliente
+                        </button>
+                        <button
+                            type="reset"
+                            class="btn btn-secondary px-4">
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
         <!-- Tarjetas principales -->
         <div class="row justify-content-center">
 
