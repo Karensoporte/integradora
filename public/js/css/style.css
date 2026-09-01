@@ -1,0 +1,30 @@
+body {
+    background-color: #f5f7fa;
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    min-height: calc(100vh - 120px);
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    margin-bottom: 15px;
+}
+
+footer {
+    border-top: 1px solid #ddd;
+}
