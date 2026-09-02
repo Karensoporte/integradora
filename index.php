@@ -14,6 +14,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $mensaje = "No se pudo registrar el cliente.";
     }
 }
+    if (isset($_GET['registro']) && $_GET['registro'] === 'ok') {
+    $mensaje = "Cliente registrado correctamente."; 
+}
 
 $clientes = $controller->listar();
 

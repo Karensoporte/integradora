@@ -24,7 +24,24 @@ class ClienteController
         $correo = trim($_POST['correo'] ?? '');
         $telefono = trim($_POST['telefono'] ?? '');
         $edad = intval($_POST['edad'] ?? 0);
-
+            if (
+                $nombre === '' ||
+                $apellido === '' ||
+                $correo === '' ||
+                $telefono === '' ||
+                $edad === 0
+            ) {
+                return false;
+            }
+            if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+                return false;
+            }
+            if (!ctype_digit($telefono) || strlen($telefono) !== 10) {
+                return false;
+            }
+            if ($edad < 18 || $edad > 100) {
+                return false;
+            }
         return $this->cliente->registrar(
             $nombre,
             $apellido,

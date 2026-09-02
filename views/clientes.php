@@ -6,11 +6,14 @@
 
     <title>Registro de Clientes</title>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS propio -->
-    <link rel="stylesheet" href="public/css/style.css">
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- CSS propio -->
+<link rel="stylesheet" href="public/css/style.css">
 </head>
 
 <body>
@@ -28,17 +31,53 @@
     <main class="container py-5">
 
         <!-- Encabezado -->
-        <div class="text-center mb-5">
-            <h1>Registro de Clientes</h1>
-            <p class="text-muted">
-                Sistema web desarrollado con PHP, MySQL y MVC
-            </p>
-        </div>
-<div class="row justify-content-center mb-5">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold">Sistema de Registro de Clientes</h1>
+                    <p class="text-muted">
+                        Administra y consulta la información de los clientes registrados.
+                    </p>
+                </div>
+
+<?php if (!empty($mensaje)): ?>
+    <div class="alert alert-info text-center mb-4">
+        <?php echo $mensaje; ?>
+    </div>
+<?php endif; ?>
+<?php if (!empty($mensaje) && $mensaje === "Cliente registrado correctamente."): ?>
+<script>
+    document.getElementById("formularioCliente").reset();
+</script>
+<?php endif; ?>
+        <!-- Tarjetas principales -->
+        <div class="row justify-content-center">
+
+            <!-- Registrar cliente -->
+            <div class="col-md-5 mb-4">
+                <div class="card shadow h-100">
+                    <div class="card-body text-center">
+
+                        <h3 class="card-title">
+                            Registrar Cliente
+                        </h3>
+
+                        <p class="card-text">
+                            Permite ingresar la información de nuevos clientes.
+                        </p>
+
+                        <button class="btn btn-primary" type="button" id="btnNuevoCliente">
+                            <i class="bi bi-person-plus"></i>
+                            Nuevo Cliente
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+<div class="row justify-content-center mb-5 d-none" id="formularioRegistro">
     <div class="col-md-8">
         <div class="card shadow">
             <div class="card-body">
                 <h3 class="card-title text-center mb-4">
+                    <i class="bi bi-person-plus"></i>
                     Registrar nuevo cliente
                 </h3>
                 <form action="" method="POST" id="formularioCliente">
@@ -120,35 +159,6 @@
     </div>
 </div>
 
-<?php if (!empty($mensaje)): ?>
-    <div class="alert alert-info text-center mb-4">
-        <?php echo $mensaje; ?>
-    </div>
-<?php endif; ?>
-        <!-- Tarjetas principales -->
-        <div class="row justify-content-center">
-
-            <!-- Registrar cliente -->
-            <div class="col-md-5 mb-4">
-                <div class="card shadow h-100">
-                    <div class="card-body text-center">
-
-                        <h3 class="card-title">
-                            Registrar Cliente
-                        </h3>
-
-                        <p class="card-text">
-                            Permite ingresar la información de nuevos clientes.
-                        </p>
-
-                        <button class="btn btn-primary">
-                            Nuevo Cliente
-                        </button>
-
-                    </div>
-                </div>
-            </div>
-
             <!-- Consultar clientes -->
             <!-- Consultar clientes -->
             <div class="col-md-10 mb-4">
@@ -219,6 +229,7 @@
             Actividad Integradora 3 - Programación de Sistemas Web
         </p>
     </footer>
+    
      <script src="public/js/validaciones.js"></script>
 </body>
 </html>

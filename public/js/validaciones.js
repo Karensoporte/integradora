@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     const formulario = document.getElementById("formularioCliente");
+    const btnNuevoCliente = document.getElementById("btnNuevoCliente");
+    const formularioRegistro = document.getElementById("formularioRegistro");
+
+    btnNuevoCliente.addEventListener("click", function () {
+
+        formularioRegistro.classList.remove("d-none");
+
+        formularioRegistro.scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
 
     formulario.addEventListener("submit", function (event) {
 
@@ -70,3 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
